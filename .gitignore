@@ -10,3 +10,4 @@ moc*
 rcc*
 *.syso
 *.rc
+*.idea
