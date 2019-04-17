@@ -375,8 +375,7 @@ func (myClient *CustomClient) joinWithPlaceLauncher(url string, cookies []*http.
 			time.Sleep(time.Second * 5)
 			continue
 		} else if plResp.Status != 2 { // status: success
-			myClient.Logger.Println("failed to connect, reason: ", LauncherStatuses[plResp.Status])
-			return errors.New("PlaceLauncher returned fatal status")
+			return errors.New("PlaceLauncher failed to connnect, reason: " + LauncherStatuses[plResp.Status])
 		}
 
 		if plResp.JoinScriptUrl == "" {
